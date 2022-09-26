@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/potch-huis/static/css/main.ae007616.css",
-    "main.js": "/potch-huis/static/js/main.1405f1d6.js",
-    "static/media/potch-huis-logo.jpg": "/potch-huis/static/media/potch-huis-logo.a7e63c99676eabd0a385.jpg",
-    "index.html": "/potch-huis/index.html",
-    "main.ae007616.css.map": "/potch-huis/static/css/main.ae007616.css.map",
-    "main.1405f1d6.js.map": "/potch-huis/static/js/main.1405f1d6.js.map"
+    "main.css": "/Potch-Huis/static/css/main.ae007616.css",
+    "main.js": "/Potch-Huis/static/js/main.a4137dcf.js",
+    "static/media/potch-huis-logo.jpg": "/Potch-Huis/static/media/potch-huis-logo.a7e63c99676eabd0a385.jpg",
+    "index.html": "/Potch-Huis/index.html",
+    "main.ae007616.css.map": "/Potch-Huis/static/css/main.ae007616.css.map",
+    "main.a4137dcf.js.map": "/Potch-Huis/static/js/main.a4137dcf.js.map"
   },
   "entrypoints": [
     "static/css/main.ae007616.css",
-    "static/js/main.1405f1d6.js"
+    "static/js/main.a4137dcf.js"
   ]
 }
