@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Potch-Huis/static/css/main.ae007616.css",
+    "main.js": "/Potch-Huis/static/js/main.a4137dcf.js",
+    "static/media/potch-huis-logo.jpg": "/Potch-Huis/static/media/potch-huis-logo.a7e63c99676eabd0a385.jpg",
+    "index.html": "/Potch-Huis/index.html",
+    "main.ae007616.css.map": "/Potch-Huis/static/css/main.ae007616.css.map",
+    "main.a4137dcf.js.map": "/Potch-Huis/static/js/main.a4137dcf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ae007616.css",
+    "static/js/main.a4137dcf.js"
+  ]
+}
