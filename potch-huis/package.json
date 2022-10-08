@@ -1,9 +1,9 @@
 {
   "name": "potch-huis",
-  "homepage": "https://thinkbeerus.github.io/Potch-Huis",
+  "homepage": "https://thinkbeerus.github.io/",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://thinkbeerus.github.io/Potch-Huis",
+  "proxy": "https://thinkbeerus.github.io/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
