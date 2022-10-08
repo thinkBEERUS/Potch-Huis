@@ -11,7 +11,7 @@ import Reports from './Reports/Reports';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter basename={process.env.PUBLIC_URL+"/Potch-Huis"}>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Routes>
       {/* <Route index element={<Login />} />
       <Route path="/Login" element={<Login />} />
@@ -19,10 +19,10 @@ root.render(
       <Route path="/Dashboard" element={<Dashboard />} />
       <Route path="/Reports" element={<Reports />} /> */}
       <Route index element={<Login />} />
-      <Route path="/Login" element={<Login />} />
-      <Route path="/Register" element={<Register />} />
-      <Route path="/Dashboard" element={<Dashboard />} />
-      <Route path="/Reports" element={<Reports />} />      
+      <Route path="/Potch-Huis/Login" element={<Login />} />
+      <Route path="/Potch-Huis/Register" element={<Register />} />
+      <Route path="/Potch-Huis/Dashboard" element={<Dashboard />} />
+      <Route path="/Potch-Huis/Reports" element={<Reports />} />      
     </Routes>
   </BrowserRouter>
 );
