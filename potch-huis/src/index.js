@@ -11,7 +11,7 @@ import Reports from './Reports/Reports';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <HashRouter basename={"https://thinkbeerus.github.io/"}>
+  <HashRouter basename={"https://thinkbeerus.github.io/Poth-Huis"}>
     <Routes>
       <Route index element={<Login />} />
       <Route path="Login" element={<Login />} />
