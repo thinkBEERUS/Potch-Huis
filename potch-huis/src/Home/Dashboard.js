@@ -27,7 +27,7 @@ const Dashboard = () => (
     <div style={{ padding: "40px 40px 40px 40px" }}>
       <div style={{display: "flex", flexDirection: "row", float: "left"}}>
         <div style={{display: "flex", flexDirection: "column", float: "left"}}>
-          <a href="/Reports" className="btn btn-success" style={{marginTop: "5%"}}>Reports</a>
+          <a href="/Potch-Huis/Reports" className="btn btn-success" style={{marginTop: "5%"}}>Reports</a>
           <a href="#" className="btn btn-success" style={{marginTop: "5%"}}>New Member</a>
           <a href="#" className="btn btn-success" style={{marginTop: "5%"}}>Stock Input</a>
           <a href="#" className="btn btn-success" style={{marginTop: "5%"}}>Transactions</a>
@@ -390,7 +390,7 @@ function StockDescription() {
         </Card.Text>
       </Card.Body>
       <Card.Footer>
-        <a href="/Dashboard" className="btn btn-success">Update Stock</a>
+        <a href="/Potch-Huis/Dashboard" className="btn btn-success">Update Stock</a>
       </Card.Footer>
     </Card>
   );

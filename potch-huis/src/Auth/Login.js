@@ -23,9 +23,9 @@ function Login() {
             </form>
             <hr />
             <p>We are glad to see you again</p>
-            <a href="/Dashboard" className="btn btn-success">Login</a> 
+            <a href="/Potch-Huis/Dashboard" className="btn btn-success">Login</a> 
             <div class="container signin">
-                <p>Need an account? <a href="/Register">Register</a>.</p>
+                <p>Need an account? <a href="/Potch-Huis/Register">Register</a>.</p>
             </div>
         </div>
       </div>
