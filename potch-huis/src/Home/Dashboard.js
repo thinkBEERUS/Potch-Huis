@@ -9,6 +9,7 @@ import {
   buildStyles
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import "./Dashboard.css"
 
 // Animation
 import { easeQuadInOut } from "d3-ease";
@@ -27,12 +28,12 @@ const Dashboard = () => (
   <Layout bodyElements={
     <div style={{ padding: "40px 40px 40px 40px" }}>
       <div style={{display: "flex", flexDirection: "row", float: "left"}}>
-        <div style={{display: "flex", flexDirection: "column", float: "left"}}>
-          <Link to="/Reports" className="btn btn-success">Reports</Link>
-          <Link to="/Members" className="btn btn-success">Members</Link>
-          <Link to="/Stock" className="btn btn-success">Stock</Link>
-          <Link to="/Donations" className="btn btn-success">Donations</Link>
-          <Link to="/Menu" className="btn btn-success">Menu</Link>
+        <div className='dashButtons'>
+          <Link to="/Reports" className="btn btn-success dashBtn">Reports</Link>
+          <Link to="/Members" className="btn btn-success dashBtn">Members</Link>
+          <Link to="/Stock" className="btn btn-success dashBtn">Stock</Link>
+          <Link to="/Donations" className="btn btn-success dashBtn">Donations</Link>
+          <Link to="/Menu" className="btn btn-success dashBtn">Menu</Link>
         </div>
       </div>
       <div style={{display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", marginRight: "5%"}}>

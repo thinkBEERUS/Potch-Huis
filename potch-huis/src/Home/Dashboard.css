@@ -12,6 +12,17 @@
     padding: 10px;
     box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
   }
+
+  .dashButtons {
+    display: flex;
+    flex-direction: column;
+    float: left;
+  }
+  
+  .dashBtn {
+    width: 100%;
+    margin: 5%;
+  }  
   
   .card {
     /* Add shadows to create the "card" effect */

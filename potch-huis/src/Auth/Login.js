@@ -9,17 +9,10 @@ function Login() {
       <div className='card'>        
         <div className='container'>
             <h1>Login</h1>
-            <p>Please fill in this form to Login</p>
             <hr />
             <form>
-                <label>
-                    Name:
-                    <input type="text" name="Member Number" />
-                </label>
-                <label>
-                    Password:
-                    <input type="password" name="Password" />
-                </label>
+              <input type="text" name="Member Number" placeholder='Member Number'/>
+              <input type="password" name="Password" placeholder='Password'/>
             </form>
             <hr />
             <p>We are glad to see you again</p>

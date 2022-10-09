@@ -8,21 +8,11 @@ function Register() {
             <div class="card">        
                 <div class="container">
                     <h1>Register</h1>
-                    <p>Please fill in this form to create an account.</p>
                     <hr />
                     <form>
-                        <label>
-                            Name:
-                            <input type="text" name="Member Number" />
-                        </label>
-                        <label>
-                            Password:
-                            <input type="password" name="Password" />
-                        </label>
-                        <label>
-                            ConfirmPassword:
-                            <input type="password" name="Confirm Password" />
-                        </label>
+                      <input type="text" name="Member Number" placeholder='Member Number'/>
+                      <input type="password" name="Password" placeholder='Password'/>
+                      <input type="password" name="Confirm Password" placeholder='Confirm Password'/>
                     </form>
                     <hr />
                     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>

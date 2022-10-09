@@ -9,6 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Reports from './Reports/Reports';
 import Members from './Members/Members';
+import Menu from './Menu/Menu';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
       <Route path="Dashboard" element={<Dashboard />} />
       <Route path="Reports" element={<Reports />} />
       <Route path="Members" element={<Members />} />
+      <Route path="Menu" element={<Menu />} />
     </Routes>
   </HashRouter>
 );
