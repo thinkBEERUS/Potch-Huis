@@ -1,6 +1,7 @@
 import './Login.css';
 import Layout from '../Layout/Layout.js';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 function Login() {
   return (
@@ -23,9 +24,9 @@ function Login() {
             </form>
             <hr />
             <p>We are glad to see you again</p>
-            <a href="/Potch-Huis/Dashboard" className="btn btn-success">Login</a> 
+            <Link to="/Dashboard" className="btn btn-success">Login</Link> 
             <div class="container signin">
-                <p>Need an account? <a href="/Potch-Huis/Register">Register</a>.</p>
+                <p>Need an account? <Link to="/Register">Register</Link>.</p>
             </div>
         </div>
       </div>
