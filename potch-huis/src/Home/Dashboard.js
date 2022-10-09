@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../Layout/Layout";
+import { Link } from 'react-router-dom';
 
 // Import react-circular-progressbar module and styles
 import {
@@ -27,10 +28,11 @@ const Dashboard = () => (
     <div style={{ padding: "40px 40px 40px 40px" }}>
       <div style={{display: "flex", flexDirection: "row", float: "left"}}>
         <div style={{display: "flex", flexDirection: "column", float: "left"}}>
-          <a href="/Potch-Huis/Reports" className="btn btn-success" style={{marginTop: "5%"}}>Reports</a>
-          <a href="#" className="btn btn-success" style={{marginTop: "5%"}}>New Member</a>
-          <a href="#" className="btn btn-success" style={{marginTop: "5%"}}>Stock Input</a>
-          <a href="#" className="btn btn-success" style={{marginTop: "5%"}}>Transactions</a>
+          <Link to="/Reports" className="btn btn-success">Reports</Link>
+          <Link to="/Members" className="btn btn-success">Members</Link>
+          <Link to="/Stock" className="btn btn-success">Stock</Link>
+          <Link to="/Donations" className="btn btn-success">Donations</Link>
+          <Link to="/Menu" className="btn btn-success">Menu</Link>
         </div>
       </div>
       <div style={{display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", marginRight: "5%"}}>
