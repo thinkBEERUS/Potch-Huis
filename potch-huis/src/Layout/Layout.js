@@ -1,6 +1,6 @@
 import Navbar from './Navbar.js';
 import Footer from './Footer.js';
-import './Layout.css';
+import '../index.css';
 
 function Layout({bodyElements}) {
     return (

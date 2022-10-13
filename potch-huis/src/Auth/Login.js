@@ -1,30 +1,48 @@
-import './Login.css';
-import Layout from '../Layout/Layout.js';
+import '../index';
 import { Link } from 'react-router-dom';
+import useLocalStorage from 'use-local-storage';
 
 function Login() {
+
+  const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light')
+
+  const switchTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  }
+
   return (
-    <Layout bodyElements={
-      <div className='body'>
-      <div className='card'>        
+    <div className="app" data-theme={theme}>
+      <div className='login-container'>
+        <h1>Login</h1>
         <div className='container'>
-            <h1>Login</h1>
-            <hr />
-            <form>
-              <input type="text" name="Member Number" placeholder='Member Number'/>
-              <input type="password" name="Password" placeholder='Password'/>
-            </form>
-            <hr />
-            <p>We are glad to see you again</p>
-            <Link to="/Dashboard" className="btn btn-success">Login</Link> 
-            <div class="container signin">
-                <p>Need an account? <Link to="/Register">Register</Link>.</p>
+          <div className='top'>
+          </div>
+          <p className='divider'><span>Good Times & Lekker People</span></p>
+          <form>
+            <label>Member Number</label>
+            <input type={'text'} placeholder='Member Number' />
+            <label>Password</label>
+            <input type={'password'} placeholder='Password' />
+            <div className='remember'>
+              <input type={'checkbox'} checked='checked' />
+              <p>Remember Me</p>
             </div>
+            <Link to="/Dashboard" className="btn btn-success">Login</Link>
+          </form>
+          <div>
+            <p>Forgot Password?</p>
+            <a href='/'>Reset Password</a>
+          </div>
+          <p>Create Membership</p>
+        </div>
+        <div className='theme-toggle'>
+          <h2>Change Theme</h2>
+          <input type={'checkbox'} onClick={switchTheme} />
+
         </div>
       </div>
     </div>
-    }>
-    </Layout>
   );
 }
 

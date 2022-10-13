@@ -1,5 +1,5 @@
 import Layout from '../Layout/Layout.js';
-import './Register.css';
+import '../index.css';
 
 function Register() {
   return (

@@ -1,4 +1,4 @@
-import './Navbar.css';
+import '../index.css';
 import logo from '../Assets/potch-huis-logo.jpg';
 
 function Navbar() {

@@ -9,7 +9,7 @@ import {
   buildStyles
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import "./Dashboard.css"
+import '../index.css';
 
 // Animation
 import { easeQuadInOut } from "d3-ease";

@@ -1,4 +1,4 @@
-import './Reports.css';
+import '../index.css';
 import Layout from '../Layout/Layout.js';
 import Table from 'react-bootstrap/Table';
 
