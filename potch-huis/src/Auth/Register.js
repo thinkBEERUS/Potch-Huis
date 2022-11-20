@@ -1,30 +1,41 @@
-import Layout from '../Layout/Layout.js';
 import '../index.css';
+import { Link } from 'react-router-dom';
+import useLocalStorage from 'use-local-storage';
+import React, { useState, useEffect } from 'react';
 
 function Register() {
+
+  const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light')
+
+  const switchTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  }
+
   return (
-    <Layout bodyElements={    
-        <div class="body">
-            <div class="card">        
-                <div class="container">
-                    <h1>Register</h1>
-                    <hr />
-                    <form>
-                      <input type="text" name="Member Number" placeholder='Member Number'/>
-                      <input type="password" name="Password" placeholder='Password'/>
-                      <input type="password" name="Confirm Password" placeholder='Confirm Password'/>
-                    </form>
-                    <hr />
-                    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-                    <button type="submit" class="registerbtn">Register</button>
-                    <div class="container signin">
-                        <p>Already have an account? <a href="/Potch-Huis/Login">Sign in</a></p>
-                    </div>
-                </div>
-            </div>
+    <div className="app" data-theme={theme}>
+      <div className='login-container'>
+        <h1>Login</h1>
+        <div className='container'>
+          <div className='top'>
+          </div>
+          <p className='divider'><span>Good Times & Lekker People</span></p>
+          <form>
+            <label>Member Number</label>
+            <input type={'text'} placeholder='Member Number' />
+            <label>Password</label>
+            <input type={'password'} placeholder='Password' />
+            <label>Confirm Password</label>
+            <input type={'password'} placeholder='Confirm Password' />
+            <label>Email</label>
+            <input type={'email'} placeholder='something@gmail.com' />
+            <label>WhatsApp Number</label>
+            <input type={'tel'} placeholder='012 345 6789' />
+            <Link to="/DocumentList" className="btn btn-success">Register</Link>
+          </form>
         </div>
-    }>
-    </Layout>
+      </div>
+    </div>
   );
 }
 

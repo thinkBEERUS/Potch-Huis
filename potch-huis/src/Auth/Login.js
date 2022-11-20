@@ -1,4 +1,4 @@
-import '../index';
+import '../index.css';
 import { Link } from 'react-router-dom';
 import useLocalStorage from 'use-local-storage';
 
@@ -31,10 +31,9 @@ function Login() {
             <Link to="/Dashboard" className="btn btn-success">Login</Link>
           </form>
           <div>
-            <p>Forgot Password?</p>
-            <a href='/'>Reset Password</a>
+            <Link to="/PasswordReset">Reset Password</Link>
+            <Link to="/Register">Create Membership</Link>
           </div>
-          <p>Create Membership</p>
         </div>
         <div className='theme-toggle'>
           <h2>Change Theme</h2>
