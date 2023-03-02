@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Password]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Salt] VARBINARY(MAX) NOT NULL, 
+    [Hash] NVARCHAR(MAX) NOT NULL, 
+    [MemberNumber] NVARCHAR(50) NOT NULL
+)

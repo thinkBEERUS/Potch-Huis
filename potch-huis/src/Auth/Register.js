@@ -2,13 +2,20 @@ import { Box, Button, TextField } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { useLocation } from "react-router-dom";
+import { tokens, useMode } from "../theme";
+import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
 
 const Register = () => {
+  const location = useLocation();
   const isNonMobile = useMediaQuery("(min-width:600px)");
-
+  const theme = useMode();
+  const colors = tokens(theme.palette.mode);
   const handleFormSubmit = (values) => {
     console.log(values);
   };
+
+  console.log(location.pathname);
 
   return (
     <Box m="50px">
@@ -115,11 +122,19 @@ const Register = () => {
                 sx={{ gridColumn: "span 4" }}
               />
             </Box>
-            <Box display="flex" justifyContent="end" mt="20px">
-              <Button type="submit" color="secondary" variant="contained">
-                Create New User
-              </Button>
-            </Box>
+            <Button
+              sx={{
+                backgroundColor: colors.blueAccent[700],
+                color: colors.grey[100],
+                fontSize: "14px",
+                fontWeight: "bold",
+                padding: "10px 20px",
+              }}
+              onClick={handleFormSubmit}
+            >
+              <AppRegistrationIcon sx={{ mr: "10px" }} />
+              Register
+            </Button>
           </form>
         )}
       </Formik>

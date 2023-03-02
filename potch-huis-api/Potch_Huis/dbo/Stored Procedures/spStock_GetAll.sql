@@ -1,0 +1,5 @@
+﻿CREATE PROCEDURE [dbo].[spStock_GetAll]
+AS
+BEGIN
+	SELECT * FROM dbo.Stock WITH(NOLOCK);
+END

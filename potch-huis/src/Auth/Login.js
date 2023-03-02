@@ -3,11 +3,27 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
-import "./auth.css";
+//import "./auth.css";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { ColorModeContext, useMode, tokens } from "../theme";
+import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
+import LockResetIcon from "@mui/icons-material/LockReset";
+import LoginIcon from "@mui/icons-material/Login";
 
 const Login = () => {
   const navigate = useNavigate();
   const [checked, setChecked] = useState(false);
+  const [theme, colorMode] = useMode();
+  const colors = tokens(theme.palette.mode);
+  // const location = useLocation();
+
+  // console.log(location.pathname);
+  // if (location.pathname === "/" || location.pathname === "/Potch-Huis/") {
+  //   const sideB = document.getElementById("sidebar");
+  //   const topB = document.getElementById("topbar");
+  //   sideB.hidden = true;
+  //   topB.hidden = true;
+  // }
 
   const handleRegister = () => {
     navigate("/Register");
@@ -18,180 +34,170 @@ const Login = () => {
   };
 
   const handleFormSubmit = (values) => {
-    fetch("http://localhost:3000/auth", {
+    const memNum = values.memberNumber;
+    const password = values.password;
+    const url =
+      "https://localhost:7287/Members/Auth?memberNumber=" +
+      memNum +
+      "&password=" +
+      password;
+    fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        username: values.memberNumber,
-        password: values.Password,
-      }),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        // Check if the response contains an authentication token
-        if (data.token) {
-          // Create a cookie to store the token
-          document.cookie = `authToken=${data.token}; path=/`;
-          navigate("/Dashboard");
-        }
+      .then((response) => {
+        console.log(response);
+        navigate("/Dashboard");
       })
       .catch((error) => console.error(error));
   };
 
   return (
-    <Box m="50px">
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          marginTop: "2%",
-          marginLeft: "20%",
-          marginRight: "20%",
-          width: "60%",
-        }}
-      >
-        <Button
-          type="submit"
-          variant="outlined"
-          onClick={handleRegister}
-          style={{
-            width: "100px",
-            height: "50",
-            color: "#53af5b",
-            borderBlockColor: "#53af5b",
-            fontSize: 10,
-          }}
-        >
-          Register
-        </Button>
-        <Button
-          type="submit"
-          variant="outlined"
-          onClick={handleForgotPassword}
-          style={{
-            width: "100px",
-            height: "50",
-            color: "#53af5b",
-            borderBlockColor: "#53af5b",
-            fontSize: 10,
-          }}
-        >
-          Forgot Password
-        </Button>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          marginTop: "5%",
-        }}
-      >
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
         <div
           style={{
             display: "flex",
+            justifyContent: "center",
             flexDirection: "column",
-            textAlign: "center",
-            marginBottom: 40,
+            width: "100%",
+            height: "100%",
+            padding: "10%",
           }}
         >
-          <h1 style={{ color: "#53af5b" }}>Potch Huis</h1>
-          <h1 style={{ color: "#53af5b" }}>Good Times, Lekker People</h1>
-        </div>
-      </div>
-      <Formik
-        onSubmit={handleFormSubmit}
-        initialValues={initialValues}
-        validationSchema={checkoutSchema}
-      >
-        {({
-          values,
-          errors,
-          touched,
-          handleBlur,
-          handleChange,
-          handleSubmit,
-        }) => (
-          <form onSubmit={handleSubmit}>
-            <div className="inputContainer">
-              <TextField
-                variant="outlined"
-                type="text"
-                label="Member Number"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.memberNumber}
-                name="memberNumber"
-                error={!!touched.memberNumber && !!errors.memberNumber}
-                helperText={touched.memberNumber && errors.memberNumber}
-                style={{
-                  marginBottom: 10,
-                  marginTop: 10,
-                }}
-                InputProps={{
-                  sx: {
-                    "& input": {
-                      color: "#53af5b",
-                    },
-                  },
-                }}
-                InputLabelProps={{
-                  style: { color: "#53af5b", textAlign: "center" },
-                }}
-              />
-              <TextField
-                variant="outlined"
-                type="Password"
-                label="Password"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.Password}
-                name="Password"
-                error={!!touched.Password && !!errors.Password}
-                helperText={touched.Password && errors.Password}
-                style={{
-                  marginBottom: 10,
-                  marginTop: 10,
-                }}
-                InputProps={{
-                  sx: {
-                    "& input": {
-                      color: "#53af5b",
-                    },
-                  },
-                }}
-                InputLabelProps={{
-                  style: { color: "#53af5b" },
-                }}
-              />
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <h1>Potch Huis</h1>
+            <Formik
+              onSubmit={handleFormSubmit}
+              initialValues={initialValues}
+              validationSchema={checkoutSchema}
+            >
+              {({
+                values,
+                errors,
+                touched,
+                handleBlur,
+                handleChange,
+                handleSubmit,
+              }) => (
+                <form onSubmit={handleSubmit} style={{ width: "30%" }}>
+                  <div
+                    className="inputContainer"
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
+                  >
+                    <TextField
+                      fullWidth
+                      variant="outlined"
+                      type="text"
+                      label="Member Number"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      value={values.memberNumber}
+                      name="memberNumber"
+                      error={!!touched.memberNumber && !!errors.memberNumber}
+                      helperText={touched.memberNumber && errors.memberNumber}
+                      style={{
+                        marginBottom: 10,
+                        marginTop: 10,
+                      }}
+                      InputLabelProps={{
+                        style: { textAlign: "center" },
+                      }}
+                    />
+                    <TextField
+                      fullWidth
+                      variant="outlined"
+                      type="Password"
+                      label="Password"
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      value={values.Password}
+                      name="Password"
+                      error={!!touched.Password && !!errors.Password}
+                      helperText={touched.Password && errors.Password}
+                      style={{
+                        marginBottom: 10,
+                        marginTop: 10,
+                      }}
+                    />
+                    <Button
+                      type="submit"
+                      sx={{
+                        backgroundColor: colors.blueAccent[700],
+                        color: colors.grey[100],
+                        fontSize: "14px",
+                        fontWeight: "bold",
+                        padding: "10px 20px",
+                        margin: "10px",
+                      }}
+                    >
+                      <LoginIcon sx={{ mr: "10px" }} />
+                      Login
+                    </Button>
+                  </div>
+                </form>
+              )}
+            </Formik>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                width: "50%",
+                height: "200px",
+              }}
+            >
               <Button
-                type="submit"
-                variant="outlined"
-                style={{
-                  marginTop: 20,
-                  marginLeft: "80%",
-                  width: "20%",
-                  color: "#53af5b",
-                  borderBlockColor: "#53af5b",
+                sx={{
+                  backgroundColor: colors.primary[600],
+                  color: colors.grey[100],
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                  padding: "10px 20px",
+                  margin: "10px",
                 }}
+                onClick={handleRegister}
               >
-                Login
+                <AppRegistrationIcon sx={{ mr: "10px" }} />
+                Register
+              </Button>
+              <Button
+                sx={{
+                  backgroundColor: colors.primary[600],
+                  color: colors.grey[100],
+                  fontSize: "14px",
+                  fontWeight: "bold",
+                  padding: "10px 20px",
+                  margin: "10px",
+                }}
+                onClick={handleForgotPassword}
+              >
+                <LockResetIcon sx={{ mr: "10px" }} />
+                Forgot Password
               </Button>
             </div>
-          </form>
-        )}
-      </Formik>
-      <Box sx={{ height: "100%" }}>
-        <Box sx={{ width: `calc(200px + 100px)` }}>
-          <Slide direction="right" in={checked} mountOnEnter unmountOnExit>
-            <Alert>Password reset, please check your email.</Alert>
-          </Slide>
-        </Box>
-      </Box>
-    </Box>
+          </div>
+          <Box sx={{ width: `calc(200px + 100px)` }}>
+            <Slide direction="right" in={checked} mountOnEnter unmountOnExit>
+              <Alert>Password reset, please check your email.</Alert>
+            </Slide>
+          </Box>
+        </div>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 };
 

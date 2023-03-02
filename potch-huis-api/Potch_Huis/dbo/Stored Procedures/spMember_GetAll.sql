@@ -1,0 +1,5 @@
+﻿CREATE PROCEDURE [dbo].[spMember_GetAll]
+AS
+BEGIN
+	SELECT * FROM dbo.Member WITH(NOLOCK);
+END

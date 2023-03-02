@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Potch-Huis/static/css/main.1925b548.css",
-    "main.js": "/Potch-Huis/static/js/main.83586983.js",
+    "main.css": "/Potch-Huis/static/css/main.07a6e487.css",
+    "main.js": "/Potch-Huis/static/js/main.79ec264e.js",
     "static/media/PH-Membership-Files.zip": "/Potch-Huis/static/media/PH-Membership-Files.fcedd2a38f673339d987.zip",
     "index.html": "/Potch-Huis/index.html",
-    "main.1925b548.css.map": "/Potch-Huis/static/css/main.1925b548.css.map",
-    "main.83586983.js.map": "/Potch-Huis/static/js/main.83586983.js.map"
+    "main.07a6e487.css.map": "/Potch-Huis/static/css/main.07a6e487.css.map",
+    "main.79ec264e.js.map": "/Potch-Huis/static/js/main.79ec264e.js.map"
   },
   "entrypoints": [
-    "static/css/main.1925b548.css",
-    "static/js/main.83586983.js"
+    "static/css/main.07a6e487.css",
+    "static/js/main.79ec264e.js"
   ]
 }

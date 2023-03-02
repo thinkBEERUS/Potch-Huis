@@ -1,0 +1,25 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Password]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column Salt in table [dbo].[Password] is currently  NVARCHAR (MAX) NOT NULL but is being changed to 
+         VARBINARY (MAX) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible
+         with type  VARBINARY (MAX) NOT NULL.
+
+** User actions
+     Table rebuild
+       [dbo].[Password] (Table)
+
+** Supporting actions
+     Refresh
+       [dbo].[spMember_Delete] (Procedure)
+       [dbo].[spPassword_Get] (Procedure)
+       [dbo].[spPassword_Insert] (Procedure)
+       [dbo].[spPassword_Update] (Procedure)
+
+The type for column Salt in table [dbo].[Password] is currently  NVARCHAR (MAX) NOT NULL but is being changed to  VARBINARY (MAX) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  VARBINARY (MAX) NOT NULL.
+

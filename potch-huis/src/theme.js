@@ -130,18 +130,18 @@ export const themeSettings = (mode) => {
         ? {
             // palette values for dark mode
             primary: {
-              main: colors.primary[500],
+              main: colors.primary[800],
             },
             secondary: {
-              main: colors.greenAccent[500],
+              main: colors.primary[300],
             },
             neutral: {
-              dark: colors.grey[700],
-              main: colors.grey[500],
-              light: colors.grey[100],
+              dark: colors.grey[800],
+              main: colors.grey[800],
+              light: colors.grey[800],
             },
             background: {
-              default: colors.primary[400],
+              default: colors.primary[600],
             },
           }
         : {
@@ -150,12 +150,12 @@ export const themeSettings = (mode) => {
               main: colors.primary[100],
             },
             secondary: {
-              main: colors.greenAccent[500],
+              main: colors.blueAccent[500],
             },
             neutral: {
               dark: colors.grey[700],
               main: colors.grey[500],
-              light: colors.grey[100],
+              light: colors.grey[300],
             },
             background: {
               default: "#fcfcfc",

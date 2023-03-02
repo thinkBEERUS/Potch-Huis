@@ -1,0 +1,20 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Password] (Table)
+       [dbo].[spPassword_Get] (Procedure)
+       [dbo].[spPassword_Insert] (Procedure)
+       [dbo].[spPassword_Update] (Procedure)
+     Alter
+       [dbo].[spMember_Delete] (Procedure)
+
+** Supporting actions

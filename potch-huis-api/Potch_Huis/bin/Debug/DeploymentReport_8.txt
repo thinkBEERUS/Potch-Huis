@@ -1,0 +1,25 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Stock] (Table)
+       Default Constraint: unnamed constraint on [dbo].[Stock] (Default Constraint)
+       [dbo].[spInsertStock] (Procedure)
+       [dbo].[spStock_Get] (Procedure)
+       [dbo].[spStock_GetAll] (Procedure)
+       [dbo].[spStockDelete] (Procedure)
+       [dbo].[spStockGetActive] (Procedure)
+       [dbo].[spStockUpdate] (Procedure)
+     Alter
+       [dbo].[spMember_Get] (Procedure)
+       [dbo].[spMember_GetAll] (Procedure)
+
+** Supporting actions
