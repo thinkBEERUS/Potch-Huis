@@ -3,7 +3,8 @@ import Login from "./Auth/Login";
 import Register from "./Auth/Register";
 //import Reports from "./Reports/Reports";
 import Members from "./Members/Members";
-//import Menu from "./Menu/Menu";
+import Stock from "./Stock/Stock";
+import Menu from "./Menu/MenuStock";
 import DocumentList from "./Auth/Document";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
@@ -20,13 +21,14 @@ function App() {
   if (
     location.pathname === "/" ||
     location.pathname === "/Potch-Huis/" ||
-    location.pathname === "/Register"
+    location.pathname === "/Register" ||
+    location.pathname === "/DocumentList"
   ) {
     return (
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <div className="app">
+          <div id="app" className="app">
             <Sidebar isSidebar={isSidebar} show={false} />
             <main className="content">
               <Topbar setIsSidebar={setIsSidebar} show={false} />
@@ -36,7 +38,6 @@ function App() {
                 <Route path="Dashboard" element={<Dashboard />} />
                 {/* <Route path="Reports" element={<Reports />} /> */}
                 <Route path="Members" element={<Members />} />
-                {/* <Route path="Menu" element={<Menu />} /> */}
                 <Route path="DocumentList" element={<DocumentList />} />
               </Routes>
             </main>
@@ -49,7 +50,7 @@ function App() {
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <div className="app">
+          <div id="app" className="app">
             <Sidebar isSidebar={isSidebar} show={true} />
             <main className="content">
               <Topbar setIsSidebar={setIsSidebar} show={true} />
@@ -59,7 +60,8 @@ function App() {
                 <Route path="Dashboard" element={<Dashboard />} />
                 {/* <Route path="Reports" element={<Reports />} /> */}
                 <Route path="Members" element={<Members />} />
-                {/* <Route path="Menu" element={<Menu />} /> */}
+                <Route path="Stock" element={<Stock />} />
+                <Route path="Menu" element={<Menu />} />
                 <Route path="DocumentList" element={<DocumentList />} />
               </Routes>
             </main>

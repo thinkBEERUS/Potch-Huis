@@ -1,12 +1,19 @@
-import { Alert, Box, Button, TextField, Slide } from "@mui/material";
+import {
+  Alert,
+  Box,
+  Button,
+  TextField,
+  Slide,
+  Typography,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
-//import "./auth.css";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode, tokens } from "../theme";
 import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import LockResetIcon from "@mui/icons-material/LockReset";
 import LoginIcon from "@mui/icons-material/Login";
 
@@ -15,29 +22,25 @@ const Login = () => {
   const [checked, setChecked] = useState(false);
   const [theme, colorMode] = useMode();
   const colors = tokens(theme.palette.mode);
-  // const location = useLocation();
-
-  // console.log(location.pathname);
-  // if (location.pathname === "/" || location.pathname === "/Potch-Huis/") {
-  //   const sideB = document.getElementById("sidebar");
-  //   const topB = document.getElementById("topbar");
-  //   sideB.hidden = true;
-  //   topB.hidden = true;
-  // }
+  const isNonMobile = useMediaQuery("(min-width:600px)");
 
   const handleRegister = () => {
     navigate("/Register");
   };
 
   const handleForgotPassword = () => {
-    setChecked((prev) => !prev);
+    setChecked(true);
+
+    setTimeout(() => {
+      setChecked(false);
+    }, 1500);
   };
 
   const handleFormSubmit = (values) => {
     const memNum = values.memberNumber;
     const password = values.password;
     const url =
-      "https://localhost:7287/Members/Auth?memberNumber=" +
+      "https://lostaquabike57.conveyor.cloud/Members/Auth?memberNumber=" +
       memNum +
       "&password=" +
       password;
@@ -48,7 +51,9 @@ const Login = () => {
       },
     })
       .then((response) => {
-        console.log(response);
+        document.cookie = "username=Austin;";
+        document.cookie = "membernumber=PH00001ADM;";
+        console.log(document.cookie);
         navigate("/Dashboard");
       })
       .catch((error) => console.error(error));
@@ -58,144 +63,154 @@ const Login = () => {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
-            width: "100%",
-            height: "100%",
-            padding: "10%",
-          }}
-        >
-          <div
-            style={{
+        <Box m="100px">
+          <Box
+            sx={{
+              gridColumn: "span 4",
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
             }}
           >
-            <h1>Potch Huis</h1>
-            <Formik
-              onSubmit={handleFormSubmit}
-              initialValues={initialValues}
-              validationSchema={checkoutSchema}
+            <Typography
+              variant="h1"
+              fontWeight="600"
+              color={colors.grey[100]}
+              m="5px"
             >
-              {({
-                values,
-                errors,
-                touched,
-                handleBlur,
-                handleChange,
-                handleSubmit,
-              }) => (
-                <form onSubmit={handleSubmit} style={{ width: "30%" }}>
-                  <div
-                    className="inputContainer"
-                    style={{
+              Potch Huis
+            </Typography>
+            <Typography
+              variant="h3"
+              fontWeight="600"
+              color={colors.grey[200]}
+              m="5px"
+            >
+              Good times & Lekker People
+            </Typography>
+          </Box>
+          <Formik
+            onSubmit={handleFormSubmit}
+            initialValues={initialValues}
+            validationSchema={checkoutSchema}
+          >
+            {({
+              values,
+              errors,
+              touched,
+              handleBlur,
+              handleChange,
+              handleSubmit,
+            }) => (
+              <form onSubmit={handleSubmit}>
+                <Box
+                  display="grid"
+                  gap="30px"
+                  gridTemplateColumns="repeat(4, minmax(0, 1fr))"
+                  sx={{
+                    "& > div": {
+                      gridColumn: isNonMobile ? undefined : "span 4",
+                    },
+                  }}
+                >
+                  <TextField
+                    fullWidth
+                    variant="filled"
+                    type="text"
+                    label="Member Number"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    value={values.memberNumber}
+                    name="memberNumber"
+                    error={!!touched.memberNumber && !!errors.memberNumber}
+                    helperText={touched.memberNumber && errors.memberNumber}
+                    sx={{ gridColumn: "span 2" }}
+                  />
+                  <TextField
+                    fullWidth
+                    variant="filled"
+                    type="password"
+                    label="Password"
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+                    value={values.password}
+                    name="password"
+                    error={!!touched.password && !!errors.password}
+                    helperText={touched.password && errors.password}
+                    sx={{ gridColumn: "span 2" }}
+                  />
+
+                  <Box
+                    sx={{
+                      gridColumn: "span 4",
                       display: "flex",
-                      flexDirection: "column",
+                      justifyContent: "center",
                       alignItems: "center",
+                      direction: "row",
                     }}
                   >
-                    <TextField
-                      fullWidth
-                      variant="outlined"
-                      type="text"
-                      label="Member Number"
-                      onBlur={handleBlur}
-                      onChange={handleChange}
-                      value={values.memberNumber}
-                      name="memberNumber"
-                      error={!!touched.memberNumber && !!errors.memberNumber}
-                      helperText={touched.memberNumber && errors.memberNumber}
-                      style={{
-                        marginBottom: 10,
-                        marginTop: 10,
-                      }}
-                      InputLabelProps={{
-                        style: { textAlign: "center" },
-                      }}
-                    />
-                    <TextField
-                      fullWidth
-                      variant="outlined"
-                      type="Password"
-                      label="Password"
-                      onBlur={handleBlur}
-                      onChange={handleChange}
-                      value={values.Password}
-                      name="Password"
-                      error={!!touched.Password && !!errors.Password}
-                      helperText={touched.Password && errors.Password}
-                      style={{
-                        marginBottom: 10,
-                        marginTop: 10,
-                      }}
-                    />
                     <Button
-                      type="submit"
                       sx={{
+                        gridColumn: "span 1",
                         backgroundColor: colors.blueAccent[700],
                         color: colors.grey[100],
                         fontSize: "14px",
                         fontWeight: "bold",
                         padding: "10px 20px",
-                        margin: "10px",
+                        marginTop: "3%",
                       }}
+                      onClick={handleFormSubmit}
                     >
                       <LoginIcon sx={{ mr: "10px" }} />
                       Login
                     </Button>
-                  </div>
-                </form>
-              )}
-            </Formik>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                width: "50%",
-                height: "200px",
-              }}
-            >
-              <Button
-                sx={{
-                  backgroundColor: colors.primary[600],
-                  color: colors.grey[100],
-                  fontSize: "14px",
-                  fontWeight: "bold",
-                  padding: "10px 20px",
-                  margin: "10px",
-                }}
-                onClick={handleRegister}
-              >
-                <AppRegistrationIcon sx={{ mr: "10px" }} />
-                Register
-              </Button>
-              <Button
-                sx={{
-                  backgroundColor: colors.primary[600],
-                  color: colors.grey[100],
-                  fontSize: "14px",
-                  fontWeight: "bold",
-                  padding: "10px 20px",
-                  margin: "10px",
-                }}
-                onClick={handleForgotPassword}
-              >
-                <LockResetIcon sx={{ mr: "10px" }} />
-                Forgot Password
-              </Button>
-            </div>
-          </div>
-          <Box sx={{ width: `calc(200px + 100px)` }}>
-            <Slide direction="right" in={checked} mountOnEnter unmountOnExit>
-              <Alert>Password reset, please check your email.</Alert>
-            </Slide>
-          </Box>
-        </div>
+                  </Box>
+                  <Button
+                    sx={{
+                      gridColumn: "span 4",
+                      backgroundColor: colors.primary[600],
+                      color: colors.grey[100],
+                      fontSize: "14px",
+                      fontWeight: "bold",
+                      padding: "10px 20px",
+                      margin: "1%",
+                    }}
+                    onClick={handleRegister}
+                  >
+                    <AppRegistrationIcon sx={{ mr: "10px" }} />
+                    Register
+                  </Button>
+                  <Button
+                    sx={{
+                      gridColumn: "span 4",
+                      backgroundColor: colors.primary[600],
+                      color: colors.grey[100],
+                      fontSize: "14px",
+                      fontWeight: "bold",
+                      padding: "10px 20px",
+                      margin: "1%",
+                    }}
+                    onClick={handleForgotPassword}
+                  >
+                    <LockResetIcon sx={{ mr: "10px" }} />
+                    Forgot Password
+                  </Button>
+                  <Box
+                    sx={{ gridColumn: "span 2" }}
+                    style={{
+                      display: "flex",
+                    }}
+                  >
+                    <Box sx={{ width: `calc(200px + 100px)` }}>
+                      <Slide direction="right" in={checked}>
+                        <Alert>Password reset, please check your email.</Alert>
+                      </Slide>
+                    </Box>
+                  </Box>
+                </Box>
+              </form>
+            )}
+          </Formik>
+        </Box>
       </ThemeProvider>
     </ColorModeContext.Provider>
   );

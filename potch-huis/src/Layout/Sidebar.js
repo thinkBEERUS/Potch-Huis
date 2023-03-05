@@ -32,6 +32,16 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
   );
 };
 
+const memberName = document.cookie
+  .split("; ")
+  .find((row) => row.startsWith("username="))
+  ?.split("=")[1];
+
+const memberNumber = document.cookie
+  .split("; ")
+  .find((row) => row.startsWith("membernumber="))
+  ?.split("=")[1];
+
 function Sidebar({ show }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -111,10 +121,10 @@ function Sidebar({ show }) {
                     color={colors.grey[300]}
                     sx={{ m: "10px 0 0 0" }}
                   >
-                    Member Name
+                    {memberName}
                   </Typography>
                   <Typography variant="h5" color={colors.greenAccent[300]}>
-                    Member Number
+                    {memberNumber}
                   </Typography>
                 </Box>
               </Box>
