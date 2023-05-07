@@ -17,8 +17,19 @@ public class MemberData : IMemberData
         _db = db;
     }
 
-    public Task<IEnumerable<MemberModel>> GetMembers() =>
-        _db.LoadData<MemberModel, dynamic>("dbo.spMember_GetAll", new { });
+    public Task<IEnumerable<int>> GetAllRows(string name) =>
+    _db.LoadData<int, dynamic>("dbo.spGlobal_GetAll_Rows", new { DBname = name });
+
+    public Task<IEnumerable<ReportModel.MonthlyDonations>> GetDonationsMonthly(string memberNumber, string year)
+    {
+        return _db.LoadData<ReportModel.MonthlyDonations, dynamic>("dbo.spMember_Report_Monthly_Donations", new { MemberNumber = memberNumber, Year = year });
+    }
+
+    public Task<IEnumerable<MemberModel>> GetMembers(int pageNumber, int pageSize) =>
+        _db.LoadData<MemberModel, dynamic>("dbo.spMember_GetAll", new { pageNumber, pageSize });
+
+    public Task<IEnumerable<string>> GetMemberNumber() =>
+        _db.LoadData<string, dynamic>("dbo.spMember_Number", new { });
 
     public async Task<MemberModel?> GetMember(string memberNumber) =>
         (await _db.LoadData<MemberModel, dynamic>("dbo.spMember_Get",

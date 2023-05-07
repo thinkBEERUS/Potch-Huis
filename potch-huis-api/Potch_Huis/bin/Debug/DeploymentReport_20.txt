@@ -1,0 +1,52 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Request]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[Request].[ItemNumber] is being dropped, data loss could occur.
+       The column [dbo].[Request].[Items] is being dropped, data loss could occur.
+       The column [dbo].[Request].[Quantity] is being dropped, data loss could occur.
+       The column [dbo].[Request].[RequestNumber] on table [dbo].[Request] must be added, but the column has no default value
+         and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must
+         either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults
+         as a deployment option.
+
+** User actions
+     Rename
+       [dbo].[Request].[ItemNumber] (Column)
+     Table rebuild
+       [dbo].[Request] (Table)
+     Create
+       [dbo].[RequestedItems] (Table)
+       [dbo].[Stock] (Table)
+       Default Constraint: unnamed constraint on [dbo].[Stock] (Default Constraint)
+       Foreign Key: unnamed constraint on [dbo].[Request] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[RequestedItems] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[RequestedItems] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Donation] (Foreign Key)
+       [dbo].[spMember_Delete] (Procedure)
+       [dbo].[spMember_Get] (Procedure)
+       [dbo].[spMember_GetAll] (Procedure)
+       [dbo].[spMember_Insert] (Procedure)
+       [dbo].[spMember_Number] (Procedure)
+       [dbo].[spMember_Update] (Procedure)
+       [dbo].[spPassword_Get] (Procedure)
+       [dbo].[spPassword_Insert] (Procedure)
+       [dbo].[spPassword_Update] (Procedure)
+       [dbo].[spStock_Delete] (Procedure)
+       [dbo].[spStock_Get] (Procedure)
+       [dbo].[spStock_GetActive] (Procedure)
+       [dbo].[spStock_GetAll] (Procedure)
+       [dbo].[spStock_Insert] (Procedure)
+       [dbo].[spStock_Update] (Procedure)
+
+** Supporting actions
+
+The column [dbo].[Request].[ItemNumber] is being dropped, data loss could occur.
+The column [dbo].[Request].[Items] is being dropped, data loss could occur.
+The column [dbo].[Request].[Quantity] is being dropped, data loss could occur.
+The column [dbo].[Request].[RequestNumber] on table [dbo].[Request] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+

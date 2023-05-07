@@ -1,0 +1,33 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[ConfirmedDonations]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[Donation].[DonationNumber] on table [dbo].[Donation] must be added, but the column has no default
+         value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue
+         you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of
+         smart-defaults as a deployment option.
+
+** User actions
+     Table rebuild
+       [dbo].[ConfirmedDonations] (Table)
+     Alter
+       [dbo].[Donation] (Table)
+
+** Supporting actions
+     Refresh
+       [dbo].[spDonation_Confirmed_Delete] (Procedure)
+       [dbo].[spDonation_Confirmed_Get] (Procedure)
+       [dbo].[spDonation_Confirmed_GetAll] (Procedure)
+       [dbo].[spDonation_Confirmed_Insert] (Procedure)
+       [dbo].[spDonation_Confirmed_Update] (Procedure)
+       [dbo].[spDonation_Delete] (Procedure)
+       [dbo].[spDonation_Get] (Procedure)
+       [dbo].[spDonation_GetAll] (Procedure)
+       [dbo].[spDonation_Insert] (Procedure)
+
+The column [dbo].[Donation].[DonationNumber] on table [dbo].[Donation] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+

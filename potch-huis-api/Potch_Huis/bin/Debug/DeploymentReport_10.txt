@@ -1,0 +1,34 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[Stock].[StockNumber] on table [dbo].[Stock] must be added, but the column has no default value and
+         does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must
+         either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults
+         as a deployment option.
+
+** User actions
+     Alter
+       [dbo].[Stock] (Table)
+     Create
+       [dbo].[spMember_Number] (Procedure)
+
+** Supporting actions
+     Refresh
+       [dbo].[spStock_Delete] (Procedure)
+       [dbo].[spStock_Get] (Procedure)
+       [dbo].[spStock_GetActive] (Procedure)
+       [dbo].[spStock_GetAll] (Procedure)
+       [dbo].[spStock_Insert] (Procedure)
+       [dbo].[spStock_Update] (Procedure)
+
+The column [dbo].[Stock].[StockNumber] on table [dbo].[Stock] must be added, but the column has no default value and does not allow NULL values. If the table contains data, the ALTER script will not work. To avoid this issue you must either: add a default value to the column, mark it as allowing NULL values, or enable the generation of smart-defaults as a deployment option.
+If this deployment is executed, changes to [dbo].[Stock] might introduce run-time errors in [dbo].[spInsertStock].
+If this deployment is executed, changes to [dbo].[Stock] might introduce run-time errors in [dbo].[spStockDelete].
+If this deployment is executed, changes to [dbo].[Stock] might introduce run-time errors in [dbo].[spStockGetActive].
+If this deployment is executed, changes to [dbo].[Stock] might introduce run-time errors in [dbo].[spStockUpdate].
+

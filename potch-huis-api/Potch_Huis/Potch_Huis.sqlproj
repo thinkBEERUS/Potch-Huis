@@ -78,6 +78,33 @@
     <Build Include="dbo\Stored Procedures\spStock_GetActive.sql" />
     <Build Include="dbo\Stored Procedures\spStock_Update.sql" />
     <Build Include="dbo\Stored Procedures\spStock_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\spMember_Number.sql" />
+    <Build Include="dbo\Tables\Donation.sql" />
+    <Build Include="dbo\Tables\Request.sql" />
+    <Build Include="dbo\Tables\RequestedItems.sql" />
+    <Build Include="dbo\Stored Procedures\spDonation_Get.sql" />
+    <Build Include="dbo\Stored Procedures\spDonation_GetAll_Confirmed.sql" />
+    <Build Include="dbo\Stored Procedures\spDonation_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\spDonation_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\spRequest_Get.sql" />
+    <Build Include="dbo\Stored Procedures\spRequest_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\spRequest_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\spRequest_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\spRequest_Update.sql" />
+    <Build Include="dbo\Stored Procedures\spRequested_Items_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\spRequested_Items_Get.sql" />
+    <Build Include="dbo\Stored Procedures\spRequested_Items_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\spRequested_Items_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\spRequested_Items_Update.sql" />
+    <Build Include="dbo\Stored Procedures\spGlobal_GetAll_Rows.sql" />
+    <Build Include="dbo\Stored Procedures\spReport_Monthly_Requests.sql" />
+    <Build Include="dbo\Stored Procedures\spMember_Report_Monthly_Donations.sql" />
+    <Build Include="dbo\Stored Procedures\spRequested_Item_Get.sql" />
+    <Build Include="dbo\Stored Procedures\spRequest_GetAll_Unconfirmed.sql" />
+    <Build Include="dbo\Stored Procedures\spDonation_Update.sql" />
+    <Build Include="dbo\Stored Procedures\spDonation_GetAll_Unconfirmed.sql" />
+    <Build Include="dbo\Stored Procedures\spDonation_Get_Member.sql" />
+    <Build Include="dbo\Stored Procedures\spRequest_Get_Member.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Potch_Huis.refactorlog" />

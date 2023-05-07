@@ -1,0 +1,56 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[ConfirmedDonations] (Table)
+       [dbo].[Donation] (Table)
+       [dbo].[Member] (Table)
+       [dbo].[Password] (Table)
+       [dbo].[Request] (Table)
+       [dbo].[RequestedItems] (Table)
+       [dbo].[Stock] (Table)
+       Default Constraint: unnamed constraint on [dbo].[Request] (Default Constraint)
+       [dbo].[spDonation_Confirmed_Delete] (Procedure)
+       [dbo].[spDonation_Confirmed_Get] (Procedure)
+       [dbo].[spDonation_Confirmed_GetAll] (Procedure)
+       [dbo].[spDonation_Confirmed_Insert] (Procedure)
+       [dbo].[spDonation_Confirmed_Update] (Procedure)
+       [dbo].[spDonation_Delete] (Procedure)
+       [dbo].[spDonation_Get] (Procedure)
+       [dbo].[spDonation_GetAll] (Procedure)
+       [dbo].[spDonation_Insert] (Procedure)
+       [dbo].[spMember_Delete] (Procedure)
+       [dbo].[spMember_Get] (Procedure)
+       [dbo].[spMember_GetAll] (Procedure)
+       [dbo].[spMember_Insert] (Procedure)
+       [dbo].[spMember_Number] (Procedure)
+       [dbo].[spMember_Update] (Procedure)
+       [dbo].[spPassword_Get] (Procedure)
+       [dbo].[spPassword_Insert] (Procedure)
+       [dbo].[spPassword_Update] (Procedure)
+       [dbo].[spRequest_Delete] (Procedure)
+       [dbo].[spRequest_Get] (Procedure)
+       [dbo].[spRequest_GetAll] (Procedure)
+       [dbo].[spRequest_Insert] (Procedure)
+       [dbo].[spRequest_Update] (Procedure)
+       [dbo].[spRequested_Items_Delete] (Procedure)
+       [dbo].[spRequested_Items_Get] (Procedure)
+       [dbo].[spRequested_Items_GetAll] (Procedure)
+       [dbo].[spRequested_Items_Insert] (Procedure)
+       [dbo].[spRequested_Items_Update] (Procedure)
+       [dbo].[spStock_Delete] (Procedure)
+       [dbo].[spStock_Get] (Procedure)
+       [dbo].[spStock_GetActive] (Procedure)
+       [dbo].[spStock_GetAll] (Procedure)
+       [dbo].[spStock_Insert] (Procedure)
+       [dbo].[spStock_Update] (Procedure)
+
+** Supporting actions

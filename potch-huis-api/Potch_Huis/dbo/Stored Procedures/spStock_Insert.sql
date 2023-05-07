@@ -4,9 +4,11 @@
     @Quantity NVARCHAR(MAX), 
     @Value NVARCHAR(50), 
     @LastUpdated DateTime,
-    @Active BIT
+    @Active BIT,
+    @StockNumber NVARCHAR(MAX),
+    @Id int
 AS
 BEGIN
-	INSERT INTO dbo.Stock([Name], [Description], Quantity, [Value], LastUpdated, Active)
-    VALUES (@Name, @Description, @Quantity, @Value, @LastUpdated, @Active);
+	INSERT INTO dbo.Stock([Name], [Description], Quantity, [Value], LastUpdated, Active, StockNumber)
+    VALUES (@Name, @Description, @Quantity, @Value, @LastUpdated, @Active, @StockNumber);
 END

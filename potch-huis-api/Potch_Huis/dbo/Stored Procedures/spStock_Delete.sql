@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[spStock_Delete]
-	@Name nvarchar(100)
+    @StockNumber NVARCHAR(MAX)
 AS
 BEGIN
-	DELETE FROM dbo.Stock WHERE [Name] = @Name;
+	DELETE FROM dbo.Stock WHERE StockNumber = @StockNumber;
 END

@@ -1,0 +1,22 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Donation] (Table)
+       [dbo].[spDonation_Delete] (Procedure)
+       [dbo].[spDonation_Get] (Procedure)
+       [dbo].[spDonation_Get_Member] (Procedure)
+       [dbo].[spDonation_GetAll_Confirmed] (Procedure)
+       [dbo].[spDonation_GetAll_Unconfirmed] (Procedure)
+       [dbo].[spDonation_Insert] (Procedure)
+       [dbo].[spDonation_Update] (Procedure)
+
+** Supporting actions

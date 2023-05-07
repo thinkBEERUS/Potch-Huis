@@ -1,0 +1,32 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Request]
+       [dbo].[Stock]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[Stock] (Default Constraint)
+       unnamed constraint on [dbo].[Request] (Foreign Key)
+       unnamed constraint on [dbo].[Request] (Foreign Key)
+     Table rebuild
+       [dbo].[Request] (Table)
+       [dbo].[Stock] (Table)
+     Alter
+       [dbo].[spStock_Delete] (Procedure)
+       [dbo].[spStock_Insert] (Procedure)
+       [dbo].[spStock_Update] (Procedure)
+
+** Supporting actions
+     Create
+       Foreign Key: unnamed constraint on [dbo].[Request] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Request] (Foreign Key)
+     Refresh
+       [dbo].[spStock_Get] (Procedure)
+       [dbo].[spStock_GetActive] (Procedure)
+       [dbo].[spStock_GetAll] (Procedure)

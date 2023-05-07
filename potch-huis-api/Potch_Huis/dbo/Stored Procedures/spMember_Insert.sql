@@ -6,7 +6,8 @@
     @StreetAddress NVARCHAR(50), 
     @Suburb NVARCHAR(50), 
     @City NVARCHAR(50), 
-    @MemberNumber NVARCHAR(50)
+    @MemberNumber NVARCHAR(50),
+    @Id int
 AS
 BEGIN
 	INSERT INTO dbo.Member (Firstname, Lastname, Email, Cellphone, StreetAddress, Suburb, City, MemberNumber)

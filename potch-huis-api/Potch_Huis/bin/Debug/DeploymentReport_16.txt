@@ -1,0 +1,41 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Stock]
+       [dbo].[Member]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The type for column StockNumber in table [dbo].[Stock] is currently  NVARCHAR (50) NOT NULL but is being changed to  INT
+         IDENTITY (1, 1) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible
+         with type  INT IDENTITY (1, 1) NOT NULL.
+
+** User actions
+     Table rebuild
+       [dbo].[Stock] (Table)
+       [dbo].[Member] (Table)
+     Create
+       [dbo].[Donation] (Table)
+       [dbo].[Request] (Table)
+       Foreign Key: unnamed constraint on [dbo].[Donation] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Request] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Request] (Foreign Key)
+       [dbo].[spStock_Delete] (Procedure)
+       [dbo].[spStock_Get] (Procedure)
+       [dbo].[spStock_GetActive] (Procedure)
+       [dbo].[spStock_GetAll] (Procedure)
+       [dbo].[spStock_Insert] (Procedure)
+       [dbo].[spStock_Update] (Procedure)
+
+** Supporting actions
+     Refresh
+       [dbo].[spMember_Delete] (Procedure)
+       [dbo].[spMember_Get] (Procedure)
+       [dbo].[spMember_GetAll] (Procedure)
+       [dbo].[spMember_Insert] (Procedure)
+       [dbo].[spMember_Number] (Procedure)
+       [dbo].[spMember_Update] (Procedure)
+
+The type for column StockNumber in table [dbo].[Stock] is currently  NVARCHAR (50) NOT NULL but is being changed to  INT IDENTITY (1, 1) NOT NULL. Data loss could occur and deployment may fail if the column contains data that is incompatible with type  INT IDENTITY (1, 1) NOT NULL.
+

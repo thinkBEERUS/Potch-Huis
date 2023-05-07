@@ -1,0 +1,36 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Stock]
+       [dbo].[Member]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Table rebuild
+       [dbo].[Stock] (Table)
+       [dbo].[Member] (Table)
+     Create
+       [dbo].[Donation] (Table)
+       [dbo].[Request] (Table)
+       Foreign Key: unnamed constraint on [dbo].[Donation] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Request] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Request] (Foreign Key)
+       [dbo].[spStock_Delete] (Procedure)
+       [dbo].[spStock_Get] (Procedure)
+       [dbo].[spStock_GetActive] (Procedure)
+       [dbo].[spStock_GetAll] (Procedure)
+       [dbo].[spStock_Insert] (Procedure)
+       [dbo].[spStock_Update] (Procedure)
+
+** Supporting actions
+     Refresh
+       [dbo].[spMember_Delete] (Procedure)
+       [dbo].[spMember_Get] (Procedure)
+       [dbo].[spMember_GetAll] (Procedure)
+       [dbo].[spMember_Insert] (Procedure)
+       [dbo].[spMember_Number] (Procedure)
+       [dbo].[spMember_Update] (Procedure)

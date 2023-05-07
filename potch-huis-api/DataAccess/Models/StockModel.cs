@@ -14,4 +14,6 @@ public class StockModel
     public string? Value { get; set; }
     public DateTime LastUpdated { get; set; }
     public bool Active { get; set; }
+    public string? StockNumber { get; set; }
+    public int Id { get; set; }
 }

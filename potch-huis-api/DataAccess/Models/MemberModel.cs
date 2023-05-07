@@ -16,5 +16,6 @@ public class MemberModel
     public string? Suburb { get; set; }
     public string? City { get; set; }
     public string? MemberNumber { get; set; }
+    public int Id { get; set; }
 
 }

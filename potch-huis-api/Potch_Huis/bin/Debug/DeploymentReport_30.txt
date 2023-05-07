@@ -1,0 +1,24 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[spRequest_Delete] (Procedure)
+       [dbo].[spRequest_Get] (Procedure)
+       [dbo].[spRequest_GetAll] (Procedure)
+       [dbo].[spRequest_Insert] (Procedure)
+       [dbo].[spRequest_Update] (Procedure)
+       [dbo].[spRequested_Items_Delete] (Procedure)
+       [dbo].[spRequested_Items_Get] (Procedure)
+       [dbo].[spRequested_Items_Insert] (Procedure)
+       [dbo].[spRequested_Items_Update] (Procedure)
+       [dbo].[spRequestedItems_GetAll] (Procedure)
+
+** Supporting actions

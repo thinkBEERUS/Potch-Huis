@@ -1,0 +1,12 @@
+A:\Git Hub\Potch Huis\potch-huis-api\DataAccess\bin\Release\net6.0\DataAccess.deps.json
+A:\Git Hub\Potch Huis\potch-huis-api\DataAccess\bin\Release\net6.0\DataAccess.dll
+A:\Git Hub\Potch Huis\potch-huis-api\DataAccess\bin\Release\net6.0\DataAccess.pdb
+A:\Git Hub\Potch Huis\potch-huis-api\DataAccess\obj\Release\net6.0\DataAccess.csproj.AssemblyReference.cache
+A:\Git Hub\Potch Huis\potch-huis-api\DataAccess\obj\Release\net6.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+A:\Git Hub\Potch Huis\potch-huis-api\DataAccess\obj\Release\net6.0\DataAccess.AssemblyInfoInputs.cache
+A:\Git Hub\Potch Huis\potch-huis-api\DataAccess\obj\Release\net6.0\DataAccess.AssemblyInfo.cs
+A:\Git Hub\Potch Huis\potch-huis-api\DataAccess\obj\Release\net6.0\DataAccess.csproj.CoreCompileInputs.cache
+A:\Git Hub\Potch Huis\potch-huis-api\DataAccess\obj\Release\net6.0\DataAccess.dll
+A:\Git Hub\Potch Huis\potch-huis-api\DataAccess\obj\Release\net6.0\refint\DataAccess.dll
+A:\Git Hub\Potch Huis\potch-huis-api\DataAccess\obj\Release\net6.0\DataAccess.pdb
+A:\Git Hub\Potch Huis\potch-huis-api\DataAccess\obj\Release\net6.0\ref\DataAccess.dll

@@ -1,0 +1,5 @@
+﻿CREATE PROCEDURE [dbo].[spMember_Number]
+AS
+BEGIN
+	SELECT TOP 1 Id FROM dbo.Member WITH(NOLOCK) ORDER BY Id DESC;
+END

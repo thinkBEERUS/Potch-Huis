@@ -4,7 +4,9 @@
     @Quantity NVARCHAR(MAX), 
     @Value NVARCHAR(50), 
     @LastUpdated DateTime,
-    @Active BIT
+    @Active BIT,
+    @StockNumber NVARCHAR(MAX),
+    @Id INT
 AS
 BEGIN
 	UPDATE dbo.Stock SET 
@@ -14,5 +16,5 @@ BEGIN
     [Value] = @Value,
     LastUpdated = GETDATE(),
     Active = @Active
-    WHERE [Name] = @Name;
+    WHERE StockNumber = @StockNumber;
 END
