@@ -2,9 +2,12 @@
 using DataAccess.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace DataAccess.Data;
 
@@ -40,8 +43,33 @@ public class RequestData : IRequestData
     public Task<IEnumerable<RequestModel>> GetRequestMember(string memberNumber, int pageNumber, int pageSize) =>
         _db.LoadData<RequestModel, dynamic>("dbo.spRequest_Get_Member", new { memberNumber, pageNumber, pageSize });
 
-    public Task InsertRequest(RequestModel request) =>
-        _db.SaveData("dbo.spRequest_Insert", request);
+    public string InsertRequest(RequestModel request)
+    {
+        using (var connection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Potch_Huis;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
+        {
+            connection.Open();
+            using (var command = new SqlCommand("dbo.spRequest_Insert", connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+
+                var requestNumberParam = new SqlParameter("@RequestNumber", SqlDbType.NVarChar, 100);
+                requestNumberParam.Direction = ParameterDirection.Output;
+
+                command.Parameters.Add(requestNumberParam);
+                command.Parameters.AddWithValue("@MemberNumber", request.MemberNumber);
+                command.Parameters.AddWithValue("@Value", request.Value);
+                command.Parameters.AddWithValue("@Received", request.Received);
+                command.Parameters.AddWithValue("@Confirmed", request.Confirmed);
+
+                command.ExecuteNonQuery();
+
+                connection.Close();
+
+                return requestNumberParam.Value as string ?? "NULL";                
+            }
+        }
+    }
+
 
     public Task UpdateRequest(RequestModel request) =>
         _db.SaveData("dbo.spRequest_Update", request);

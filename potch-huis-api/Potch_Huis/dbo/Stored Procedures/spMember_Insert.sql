@@ -10,6 +10,7 @@
     @Id int
 AS
 BEGIN
+SELECT @MemberNumber = COUNT(*) + 1 FROM dbo.Member;
 	INSERT INTO dbo.Member (Firstname, Lastname, Email, Cellphone, StreetAddress, Suburb, City, MemberNumber)
-    VALUES (@Firstname, @Lastname, @Email, @Cellphone, @StreetAddress, @Suburb, @City, @MemberNumber)
+    VALUES (@Firstname, @Lastname, @Email, @Cellphone, @StreetAddress, @Suburb, @City, Concat('PH', @MemberNumber))
 END

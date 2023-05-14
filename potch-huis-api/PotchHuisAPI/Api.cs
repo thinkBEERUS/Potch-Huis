@@ -382,12 +382,12 @@ namespace PotchHuisAPI
             }
         }
 
-        private static async Task<IResult> InsertRequest(RequestModel request, IRequestData data)
+        private static IResult InsertRequest(RequestModel request, IRequestData data)
         {
             try
             {
-                await data.InsertRequest(request);
-                return Results.Json(new { message = "Request Created" });
+                var requestNumber = data.InsertRequest(request);
+                return Results.Json(new { message = "R_" + requestNumber });
             }
             catch (Exception ex)
             {

@@ -9,6 +9,7 @@
     @Id INT
 AS
 BEGIN
+SELECT @RequestedItemNumber = COUNT(*) + 1 FROM dbo.RequestedItems WHERE RequestNumber = @RequestNumber;
 	INSERT INTO dbo.RequestedItems ([Name], Quantity, [Value], RequestNumber, StockNumber, RequestedItemNumber, ActualQuantity)
-    VALUES (@Name, @Quantity, @Value, @RequestNumber, @StockNumber, @RequestedItemNumber, @ActualQuantity)
+    VALUES (@Name, @Quantity, @Value, @RequestNumber, @StockNumber, CONCAT('RI_', @RequestedItemNumber), @ActualQuantity)
 END

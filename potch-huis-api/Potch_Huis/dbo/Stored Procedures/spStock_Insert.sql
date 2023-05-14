@@ -9,6 +9,7 @@
     @Id int
 AS
 BEGIN
+SELECT @StockNumber = COUNT(*) + 1 FROM dbo.Stock;
 	INSERT INTO dbo.Stock([Name], [Description], Quantity, [Value], LastUpdated, Active, StockNumber)
-    VALUES (@Name, @Description, @Quantity, @Value, @LastUpdated, @Active, @StockNumber);
+    VALUES (@Name, @Description, @Quantity, @Value, @LastUpdated, @Active, CONCAT('S_', @StockNumber));
 END

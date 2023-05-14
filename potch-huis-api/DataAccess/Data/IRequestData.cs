@@ -15,7 +15,7 @@ namespace DataAccess.Data
         Task<IEnumerable<RequestedItemModel>> GetRequestedItem(string requestedItem, string requestNumber);
         Task<IEnumerable<RequestedItemModel>> GetRequestedItems(string requestNumber);
         Task<IEnumerable<ReportModel.MonthlyRequests>> GetRequestMonthly(string name, int? months);
-        Task InsertRequest(RequestModel request);
+        string InsertRequest(RequestModel request);
         Task InsertRequestedItem(RequestedItemModel requestedItem);
         Task UpdateRequest(RequestModel request);
         Task UpdateRequestedItem(RequestedItemModel requestedItem);
