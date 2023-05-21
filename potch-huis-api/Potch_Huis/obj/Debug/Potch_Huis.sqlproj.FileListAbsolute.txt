@@ -4,7 +4,3 @@ A:\Git Hub\Potch Huis\potch-huis-api\Potch_Huis\bin\Debug\Potch_Huis.pdb
 A:\Git Hub\Potch Huis\potch-huis-api\Potch_Huis\obj\Debug\Potch_Huis.sqlproj.AssemblyReference.cache
 A:\Git Hub\Potch Huis\potch-huis-api\Potch_Huis\obj\Debug\Potch_Huis.dll
 A:\Git Hub\Potch Huis\potch-huis-api\Potch_Huis\obj\Debug\Potch_Huis.pdb
-A:\Git Hub\Potch Huis\potch-huis-api\Potch_Huis\obj\Debug\Model.xml
-A:\Git Hub\Potch Huis\potch-huis-api\Potch_Huis\obj\Debug\refactor.xml
-A:\Git Hub\Potch Huis\potch-huis-api\Potch_Huis\obj\Debug\postdeploy.sql
-A:\Git Hub\Potch Huis\potch-huis-api\Potch_Huis\obj\Debug\predeploy.sql

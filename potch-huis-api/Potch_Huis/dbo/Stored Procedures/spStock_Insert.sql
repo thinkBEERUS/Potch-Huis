@@ -3,7 +3,7 @@
     @Description NVARCHAR(MAX), 
     @Quantity NVARCHAR(MAX), 
     @Value NVARCHAR(50), 
-    @LastUpdated DateTime,
+    @LastUpdated NVARCHAR(MAX),
     @Active BIT,
     @StockNumber NVARCHAR(MAX),
     @Id int
